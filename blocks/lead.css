@@ -24,4 +24,30 @@
 
 .lead__image {
   max-width: 984px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .lead__title {
+    font-size: 75px;
+  }
+
+  .lead__image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .lead__title {
+    font-size: 40px;
+  }
+
+  .lead__subtitle {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .lead__image {
+    width: 100%;
+  }
 }

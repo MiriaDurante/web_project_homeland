@@ -1,12 +1,13 @@
 .intro {
-  max-width: 830px;
   display: flex;
   flex-direction: column;
-  margin: 92px 0 92px 148px;
+  width: 100%;
+  max-width: 984px;
+  margin: 92px auto;
 }
 
 .intro__title {
-  width: 830px;
+  max-width: 830px;
   font-weight: 900;
   font-size: 54px;
   line-height: 1.074;
@@ -33,4 +34,28 @@
   max-width: 722px;
   font-size: 16px;
   line-height: 26px;
+}
+
+@media screen and (max-width: 1024px) {
+  .intro {
+    margin: 0px;
+    padding: 90px 24px 88px;
+    width: 100%;
+  }
+
+  .intro__title {
+    font-size: 45px;
+    line-height: 1.09;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .intro {
+    padding: 64px 16px;
+  }
+
+  .intro__title {
+    font-size: 32px;
+    line-height: 1.09;
+  }
 }
