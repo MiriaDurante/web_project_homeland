@@ -4,5 +4,25 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 16px;
-  width: 1184px;
+}
+
+.photo-grid__item {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-right: 24px;
+    margin-left: 24px;
+  }
+}
+
+@media screen and (max-width: 544px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    margin-right: 16px;
+    margin-left: 16px;
+  }
 }

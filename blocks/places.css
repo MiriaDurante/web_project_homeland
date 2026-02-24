@@ -1,7 +1,8 @@
 .places {
   display: flex;
   flex-direction: column;
-  width: 984px;
+  max-width: 984px;
+  width: 100%;
   margin: 0 auto;
   padding: 90px 0px 90px 0px;
 }
@@ -14,7 +15,7 @@
   grid-template-areas:
     "title artist"
     "image paragraph"
-    ". paragraph";
+    "link paragraph";
 }
 .place__title {
   grid-area: title;
@@ -22,13 +23,13 @@
   font-weight: 900;
   font-size: 72px;
   line-height: 1.06;
-  width: 460px;
+  width: 100%;
   margin-bottom: 48px;
 }
 
 .place__container-artist {
   grid-area: artist;
-  width: 456px;
+  width: 100%;
   align-content: end;
   margin-bottom: 48px;
 }
@@ -37,6 +38,7 @@
   font-size: 12px;
   line-height: 1.22;
   text-transform: uppercase;
+
   color: #aaaaaa;
   margin-bottom: 8px;
 }
@@ -44,11 +46,12 @@
 .place__artist {
   font-size: 18px;
   line-height: 1.22;
+  font-weight: 400;
 }
 
 .place__image {
   grid-area: image;
-  width: 460px;
+  width: 100%;
   margin-bottom: 48px;
 }
 
@@ -59,13 +62,14 @@
 .place__paragraph {
   font-size: 18px;
   line-height: 1.63;
-  width: 484px;
+  width: 100%;
   margin-bottom: 25px;
 }
 
 .place__link {
+  grid-area: link;
   margin: 0;
-  width: 356.08px;
+  width: 100%;
   height: 48px;
   display: inline-block;
   padding: 0.75em 1.25em;
@@ -73,4 +77,27 @@
   color: white;
   text-decoration: none;
   border-radius: 0.25em;
+}
+
+@media screen and (max-width: 1024px) {
+  .place {
+    margin: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-bottom: 31px;
+    grid-column-gap: 28px;
+  }
+
+  .place__title {
+    font-size: 42px;
+    line-height: 1.09;
+  }
+
+  .place__paragraph {
+    font-size: 16px;
+    line-height: 1.63;
+  }
+}
+
+@media screen and (max-width: 544px) {
 }
