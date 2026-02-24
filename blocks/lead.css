@@ -25,6 +25,7 @@
 .lead__image {
   max-width: 984px;
   object-fit: cover;
+  box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.35);
 }
 
 @media screen and (max-width: 1024px) {

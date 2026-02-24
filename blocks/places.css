@@ -5,13 +5,15 @@
   width: 100%;
   margin: 0 auto;
   padding: 90px 0px 90px 0px;
+  gap: 80px;
 }
 
 .place {
-  margin-bottom: 80px;
   display: grid;
   grid-column-gap: 40px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 460px 1fr;
+  grid-template-rows: auto 460px auto;
+  row-gap: 48px;
   grid-template-areas:
     "title artist"
     "image paragraph"
@@ -24,14 +26,12 @@
   font-size: 72px;
   line-height: 1.06;
   width: 100%;
-  margin-bottom: 48px;
 }
 
 .place__container-artist {
   grid-area: artist;
   width: 100%;
   align-content: end;
-  margin-bottom: 48px;
 }
 
 .place__url-heading {
@@ -52,7 +52,7 @@
 .place__image {
   grid-area: image;
   width: 100%;
-  margin-bottom: 48px;
+  box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.35);
 }
 
 .place__container-paragraph {
@@ -68,19 +68,29 @@
 
 .place__link {
   grid-area: link;
-
   margin: 0;
   width: 100%;
+  box-sizing: border-box;
   height: 48px;
-  display: inline-block;
   padding: 0.75em 1.25em;
-  background: linear-gradient(90deg, #0278fe, #003a7b);
+  background: linear-gradient(90deg, #0278fe 0%, #003a7b 99.98%);
   color: white;
   text-decoration: none;
   text-align: center;
   border-radius: 0.25em;
-  font-size: 18px;
-  line-height: 1;
+  font-size: 17px;
+}
+
+.place__link:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 120, 254, 0.25) 0%,
+    rgba(0, 58, 123, 0.25) 99.98%
+  );
+}
+
+.place__image:hover {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 1024px) {
@@ -90,6 +100,12 @@
     padding-right: 24px;
     margin-bottom: 31px;
     grid-column-gap: 28px;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: auto 340px auto;
+  }
+
+  .places {
+    gap: 72px;
   }
 
   .place__title {
@@ -106,18 +122,45 @@
 @media screen and (max-width: 544px) {
   .place {
     display: grid;
+    padding: 0;
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto 320px auto auto;
     grid-template-areas:
       "title"
       "artist"
       "image"
       "paragraph"
-      "paragraph"
       "link";
+  }
+
+  .places {
+    gap: 62px;
+  }
+
+  .place__image {
+    margin: 0 auto;
+    width: 320px;
+    height: 320px;
   }
 
   .place__title {
     font-size: 32px;
     line-height: 1.09;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .place__container-artist {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .place__container-paragraph {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .place__link {
+    font-size: 16px;
   }
 }
