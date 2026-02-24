@@ -68,6 +68,7 @@
 
 .place__link {
   grid-area: link;
+
   margin: 0;
   width: 100%;
   height: 48px;
@@ -76,7 +77,10 @@
   background: linear-gradient(90deg, #0278fe, #003a7b);
   color: white;
   text-decoration: none;
+  text-align: center;
   border-radius: 0.25em;
+  font-size: 18px;
+  line-height: 1;
 }
 
 @media screen and (max-width: 1024px) {
@@ -100,4 +104,20 @@
 }
 
 @media screen and (max-width: 544px) {
+  .place {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "artist"
+      "image"
+      "paragraph"
+      "paragraph"
+      "link";
+  }
+
+  .place__title {
+    font-size: 32px;
+    line-height: 1.09;
+  }
 }
